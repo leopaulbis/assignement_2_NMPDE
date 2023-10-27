@@ -38,8 +38,7 @@ function [H1err] = computeH1error(u, X, T, theReferenceElement)
             errorL2 = (analytical(Xg) - N_g * Ue) ^ 2;
             L2err = L2err + errorL2 * dvolu;
             
-            errorH1 =(analytic_deriv_x(Xg) - Nx_g * Ue)^2 + 
-            (analytic_deriv_y(Xg) - Ny_g * Ue)^2;
+            errorH1 =(analytic_deriv_x(Xg) - Nx_g * Ue)^2 + (analytic_deriv_y(Xg) - Ny_g * Ue)^2;
             H1err = H1err +errorL2*dvolu+ errorH1 * dvolu;
         end
     end
